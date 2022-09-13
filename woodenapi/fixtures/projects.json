@@ -1,0 +1,36 @@
+[
+    {
+        "model": "woodenapi.project",
+        "pk": 1,
+        "fields": {
+            "builder": 1,
+            "title": "Rocking Chair",
+            "description": "Test Build",
+            "date_started": "2022-01-01",
+            "date_completed": "2022-01-07",
+            "cost": 200,
+            "image_url": "",
+            "approved": false,
+            "tags": [1],
+            "categories": [1],
+            "lumber": [1]
+        }
+    },
+    {
+        "model": "woodenapi.project",
+        "pk": 2,
+        "fields": {
+            "builder": 1,
+            "title": "Cabinet",
+            "description": "Test Build",
+            "date_started": "2022-03-02",
+            "date_completed": "2022-03-08",
+            "cost": 700,
+            "image_url": "",
+            "approved": true,
+            "tags": [1],
+            "categories": [1],
+            "lumber": [1]
+        }
+    }
+]

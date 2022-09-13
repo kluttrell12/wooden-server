@@ -1,0 +1,9 @@
+[
+    {
+        "model": "woodenapi.category",
+        "pk": 1,
+        "fields": {
+            "type": "Furniture"
+        }
+    }
+]

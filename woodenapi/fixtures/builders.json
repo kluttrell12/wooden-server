@@ -1,0 +1,13 @@
+[
+    {
+        "model": "woodenapi.builder",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "profile_image_url": "",
+            "created_on": "2022-08-15",
+            "active": true,
+            "bio": "test"
+        }
+    }
+]

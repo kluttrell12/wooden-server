@@ -1,0 +1,9 @@
+[
+    {
+        "model": "woodenapi.lumber",
+        "pk": 1,
+        "fields": {
+            "type": "Yellow Pine"
+        }
+    }
+]

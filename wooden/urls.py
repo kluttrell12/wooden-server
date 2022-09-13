@@ -13,9 +13,28 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from xml.etree.ElementInclude import include
+from django.conf.urls import include
 from django.contrib import admin
 from django.urls import path
+from rest_framework import routers
 
+from woodenapi.views.auth import login_user, register_user
+from woodenapi.views.builder import BuilderView
+from woodenapi.views.category import CategoryView
+from woodenapi.views.lumber import LumberView
+from woodenapi.views.project import ProjectView
+from woodenapi.views.tag import TagView
+
+router = routers.DefaultRouter(trailing_slash=False)
+router.register(r'builders', BuilderView, 'builder')
+router.register(r'categories', CategoryView, 'category')
+router.register(r'lumber', LumberView, 'lumber')
+router.register(r'tags', TagView, 'tag')
+router.register(r'projects', ProjectView, 'project')
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('register', register_user),
+    path('login', login_user),
+    path('', include(router.urls))
 ]

@@ -1,0 +1,9 @@
+[
+    {
+        "model": "woodenapi.tag",
+        "pk": 1,
+        "fields": {
+            "label": "Hand Tools Only"
+        }
+    }
+]
