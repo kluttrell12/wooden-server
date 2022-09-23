@@ -10,7 +10,7 @@ from woodenapi.serializers.project import ProjectSerializer
 class ProjectView(ViewSet):
     def list(self, request):
         """handle get all project.approved = true"""
-        projects = Project.objects.filter(approved=True)
+        projects = Project.objects.all()
         serializer = ProjectSerializer(projects, many=True)
         return Response(serializer.data)
 
@@ -32,8 +32,7 @@ class ProjectView(ViewSet):
                 date_started = request.data['date_started'],
                 date_completed = request.data['date_completed'],
                 cost = request.data['cost'],
-                image_url = request.data['image_url'],
-                approved = True
+                image_url = request.data['image_url']
             )
         else :
             project = Project.objects.create(
@@ -75,4 +74,3 @@ class ProjectView(ViewSet):
         project = Project.objects.get(pk=pk)
         project.delete()
         return Response(None, status=status.HTTP_204_NO_CONTENT)
-        

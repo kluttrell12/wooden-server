@@ -31,12 +31,11 @@ class BuilderView(ViewSet):
         builder = Builder.objects.get(pk = pk)
         user = User.objects.get(pk=builder.user.id)
 
-        user.first_name = request.data["user"]["first_name"]
-        user.last_name = request.data["user"]["last_name"]
-        user.username = request.data["user"]["username"]
-        user.email = request.data["user"]["email"]
-        user.is_staff = request.data["user"]["is_staff"]
-        user.is_active = request.data["user"]["is_active"]
+        user.first_name = request.data["first_name"]
+        user.last_name = request.data["last_name"]
+        user.username = request.data["username"]
+        user.email = request.data["email"]
+        user.is_staff = request.data["is_staff"]
         builder.bio = request.data["bio"]
 
         user.save()

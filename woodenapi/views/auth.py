@@ -20,20 +20,21 @@ def login_user(request):
     username = request.data['username']
     password = request.data['password']
 
-    authenticated_user = authenticate(username=username, password=password)
+    auth_user = authenticate(username=username, password=password)
 
-    if authenticated_user is not None:
-        token = Token.objects.get(user=authenticated_user)
+    if auth_user is not None:
+        token = Token.objects.get(user=auth_user)
         # build data dictionary to store information to be sent to client side
         data = {
             'valid': True,
             'token': token.key,
-            'user_id': authenticated_user.id,
-            'is_staff': authenticated_user.is_staff
+            'user_id': auth_user.id,
+            'is_staff': auth_user.is_staff
         }
     else:
         data = { 'valid': False}
     return Response(data)
+
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def register_user(request):
